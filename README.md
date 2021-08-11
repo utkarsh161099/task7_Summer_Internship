@@ -1,3 +1,4 @@
+![dock1](https://user-images.githubusercontent.com/47791515/129036744-d7020a7d-fa50-4d73-9cc7-1b404cb11c70.PNG)
 # task7_Summer_Internship
 Task 07 👨🏻‍💻 Javascript Integration with Docker Task Description 📄 :<br>
 
