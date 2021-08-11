@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Docker WebUI</title>
+  <link rel="stylesheet" href="style.css">
+
+<style> 
+
+body{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  min-height: 150vh;
+  background-color: #fd0744; 
+}
+
+
+ body::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ee033e,#FFCC70 100%);
+    clip-path: circle(30% at right 45% ); 
+    opacity: 0.7s;
+}
+
+body::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ee033e,#FFCC70 100%);
+    clip-path: circle(20% at left 10% ); 
+    opacity: 0.7s;
+} 
+
+.container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  z-index: 1;
+  top: 100px;
+}
+
+.container .card{
+    position: relative;
+    width: 900px;
+    height: 900px;
+    margin:30px;
+    font-family: 'Rubik', sans-serif;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0,0.5 );
+    border-radius: 55px;
+    background:rgba(225, 225, 225, 0.1) ;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(225, 225, 225, 0.3);
+    border-left: 1px solid rgba(225, 225, 225, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+
+.card:hover{
+    position: relative;
+    bottom: 20px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0,0.5 );   
+}
+
+.container .card .contain
+{
+   padding: 19px;
+   margin: 19px;
+   text-align: center;
+   transition: 0.5s;
+}
+
+.h2
+{
+   position:absolute;
+   top: -150px;
+   right: 3px;
+   padding-bottom: 100px;
+   font-size: 8em;
+   color: rgba(225, 225, 225, 0.55);
+   pointer-events: none;
+}
+
+.h3{
+    color: white;
+    font-size: 1.8em;
+    margin-top: 100px;
+}
+
+.p{
+    color:rgb(255, 255, 255);
+    font-size: small;
+    padding-bottom: 40px;
+}
+
+.a{
+   
+   background-color: white; 
+   border-radius: 100px;
+   text-decoration: none;
+   padding-left: 10px;
+   padding-right:10px;
+   padding-top: 8px;
+   padding-bottom: 8px;
+}
+
+
+
+body {
+    font-family: "Avenir Next";
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .header {
+    background:rgba(225, 225, 225, 0.1) ;
+    color: #fff;
+    height: 90px;
+    position:absolute;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    top: 0px;
+    width: 100%;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    z-index: 3;
+    border-radius: 20px;
+  }
+  
+
+  
+  .header-logo {
+    float: left;
+    font-size: 36px;
+    padding: 20px 40px;
+  }
+  
+  .header-list li {
+    float: right;
+    font-size: 110%;
+    /* padding: 15px 20px 33px 20px; */
+    /* border: 2px solid black; */
+    padding: 10px;
+    margin:10px 20px; 
+    
+  }
+  .copy-container{
+      width: 100%;
+      float: right;
+      position: absolute;
+      z-index: 1;
+      
+  }
+
+  .copy-container h1{
+    font-size:100px;
+    color: white;
+    text-align: center;
+  }
+
+  .copy-container h1:hover{
+
+    color: rgb(89, 149, 199);
+    transform: rotatex(20deg);
+  }
+  
+ 
+  .copy-container h2{
+     font-size:60px;
+     margin-bottom: 50px;
+     text-align: center;
+     color: white;
+  }
+  
+  .copy-container h2:hover{
+
+    color: rgb(89, 149, 199);
+    transform: rotatex(20deg);
+  }
+  
+
+  .copy-container span{
+    color:#4aa7ff;
+  }
+
+  .glass{
+      position: relative;
+      margin-top: 500px;
+      margin-bottom: 150px;
+  }
+   
+
+.copy-container{
+  top: 100px;
+  bottom: 100px;
+}
+
+.btn{
+  background-image: url("docker.png" ); height: 100%; color: #fd0744;
+  background-position: center; background-repeat: no-repeat; background-size: cover;
+  padding: 9px;
+  margin: 9px;
+  border-radius: 100px  ;
+  width: 90px;
+  margin-top: 150px;
+}
+
+    @import url('https://fonts.googleapis.com/css?family=Nuto:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: poppins;
+}
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+
+}
+
+.context h1{
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-border: 1px solid rgba(255, 255, 255, 0.65);
+    font-size: 50px;
+    backdrop-filter: blur(10px);
+}
+
+
+.area{
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #fd0744 0%, #fd0744 46%, #FFCC70 100%);
+
+
+    width: 100%;
+    height:100vh;
+
+
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+</style>
+</head>
+<body>
+    <div class="context">
+    <h1>Docker WebUI</h1>
+  </div>
+  
+  
+  <div class="area" >
+              <ul class="circles">
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+              </ul>
+  
+              </div >
+              <div class="header">
+                <div class="header-logo"></div>
+                <div class="header-list">
+                </div>
+              </div>
+        
+              
+              <div class="copy-container">
+                <h1>Web Application for Docker</h1>
+              </div>
+         
+        
+        <div class="main">
+        
+        
+             <div class="glass"> 
+        
+              <div class="container">
+        
+                  <div class="card">
+        
+                      <div class="glass">
+                          <h2 class="h2">Docker CMD</h2> 
+                          <div>
+                    <span style="color:rgb(0, 0, 0); font-style: bolid; border-radius: 100px; font-size: x-large;">[root@localhost ~]# <input id="input" size="100"/></span>
+                    <pre><div id="d1" style="color:rgb(255, 255, 255); font-style: bolid; font-family: Avenir Next; "> </div></pre>
+                
+                          <center><button onclick="docker()"  class="btn" >Run</button></center>
+                        </div>
+                        </div>
+        
+        
+                  </div>   
+            
+            </div>
+        
+        
+        </div>
+        <footer></footer>
+  
+<script>
+    function docker() {
+            // here xhr is a object from XMLHttpRequest() class
+            var i = document.getElementById("input").value
+
+            var xhr = new XMLHttpRequest();
+            // here false means sync and true means async with AJAX
+            xhr.open("GET", "http://192.168.43.16/cgi-bin/docker.py?x=" + i, true);
+            xhr.send();
+
+            // here  onload will take the return text from server [cgi-bin folder]
+            xhr.onload = function() {
+                    var output = xhr.responseText;
+                    document.getElementById("d1").innerHTML = output;
+            }
+}
+</script>
+</body>
+</html>
